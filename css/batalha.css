@@ -1,0 +1,243 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    user-select: none;
+}
+body {
+    overflow: hidden;
+    background-color: rgb(151, 151, 150);
+}
+.meio {
+    position: relative;
+}
+.jogador {
+    width: 550px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 130px;
+    left: 50px;
+}
+.jogador .jogador-img {
+    width: 300px;
+    height: 500px;
+}
+.vida {
+    position: absolute;
+    left: 30px;
+    bottom: 40px;
+    width: 70px;
+    height: 65px;
+    background-image: url(../Sprites/Batalha/vida-bolota.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(231, 255, 20);
+    font-size: 20px;
+    font-weight: 800;
+}
+.escudo {
+    position: absolute;
+    left: 30px;
+    bottom: 110px;
+    width: 70px;
+    height: 90px;
+    background-image: url(../Sprites/Batalha/escudo-bolota.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(154, 255, 250);
+    font-size: 35px;
+    font-weight: 800;
+}
+.vida-borda {
+    width: 500px;
+    height: 20px;
+    border: 7px groove rgb(104, 92, 92);
+    border-radius: 10px;
+}
+.vida-meio {
+    width: 500px;
+    height: 20px;
+    background-color: brown;
+}
+.inimigo {
+    width: 550px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 130px;
+    right: 50px;
+}
+.inimigo .inimigo-img {
+    width: 300px;
+    height: 500px;
+}
+.inimigo-acao {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(168, 255, 173);
+    font-size: 35px;
+    font-weight: 800;
+    top: -90px;
+    width: 100px;
+    height: 100px;
+}
+.escudo-anim {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    opacity: 0;
+}
+.escudo-anim-p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 130px;
+    font-weight: 900;
+    position: absolute;
+    color: rgb(108, 252, 64);
+}
+.baixo {
+    position: absolute;
+    bottom: 0px;
+    width: 100vw;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+}
+.compra {
+    background-image: url(../Sprites/Batalha/carta.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 150px;
+    width: 100px;
+    position: absolute;
+    left: 40px;
+    bottom: 20px;
+}
+.compra .compra-carta {
+    height: 150px;
+    width: 100px;
+    background-image: url(../Sprites/Batalha/carta.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.energia-bolota {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 20px;
+    left: 13vw;
+    background-image: url(../Sprites/Batalha/energia-bolota2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(163, 255, 155);
+    font-size: 40px;
+    font-weight: 900;
+}
+.mao {
+    display: flex;
+}
+.mao .mao-carta {
+    margin-left: -50px;
+    height: 200px;
+    width: 150px;
+    transition: 0.5s all;
+    cursor: pointer;
+}
+.mao .mao-carta:hover {
+    margin-left: -10px;
+    margin-right: 40px;
+    margin-top: -30px;
+}
+.passar-turno {
+    width: 400px;
+    height: 90px;
+    position: absolute;
+    top: 20px;
+    right: 7vw;
+    background-image: url(../Sprites/Batalha/fundo-turno.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(128, 98, 65);
+    font-size: 25px;
+    font-weight: 900;
+    cursor: pointer;
+}
+@keyframes subirCarta {
+    0% {
+        position: relative;
+        bottom: 60px;
+        opacity: 0;
+    }
+    100% {
+        position: relative;
+        bottom: 0px;
+        opacity: 1;
+    }
+}
+@keyframes descerCarta {
+    0% {
+        position: relative;
+        bottom: 0px;
+        opacity: 1;
+    }
+    100% {
+        position: relative;
+        bottom: 60px;
+        opacity: 0;
+    }
+}
+@keyframes attackJogador {
+    0% {
+        margin-left: 0px;
+    }
+    40% {
+        margin-left: 150px;
+    }
+    100% {
+        margin-left: 0px;
+    }
+}
+@keyframes attackInimigo {
+    0% {
+        margin-right: 0px;
+    }
+    40% {
+        margin-right: 150px;
+    }
+    100% {
+        margin-right: 0px;
+    }
+}
+@keyframes escudoAnim {
+    0% {
+        opacity: 0;
+        scale: 0.5;
+    }
+    50% {
+        opacity: 1;
+        scale: 1;
+    }
+    100% {
+        opacity: 0;
+        scale: 1.3;
+    }
+}

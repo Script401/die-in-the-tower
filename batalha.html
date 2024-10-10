@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/batalha.css">
+    <script src="js/batalha.js" defer></script>
+    <script src="js/cartas.js" defer></script>
+    <title>Die in the tower</title>
+</head>
+<body>
+    <main class="meio">
+        <div class="jogador">
+            <img class="jogador-img" id="jogador" src="Sprites/batalha/guerrra.png">
+            <p class="vida" id="vid-bol-jog"></p>
+            <p class="escudo" id="esc-bol-jog"></p>
+            <div class="escudo-anim" id="esc-anim"><img src="Sprites/Batalha/escudo-bolota.png"><p class="escudo-anim-p">+</p></div>
+            <div class="vida-borda">
+                <div class="vida-meio" id="vida-jogador"></div>
+            </div>
+        </div>
+        <div class="inimigo">
+            <img class="inimigo-img" id="inimigo" src="Sprites/batalha/guerreiro.png">
+            <div src="" class="inimigo-acao" id="ini-acao"></div>
+            <p class="vida"  id="vid-bol-ini"></p>
+            <p class="escudo"  id="esc-bol-ini"></p>
+            <div class="escudo-anim" id="esc-anim-ini"><img src="Sprites/Batalha/escudo-bolota.png"><p class="escudo-anim-p">+</p></div>
+            <div class="vida-borda">
+                <div class="vida-meio" id="vida-inimigo"></div>
+            </div>
+        </div>
+    </main>
+    <footer class="baixo">
+        <div class="compra">
+            <div class="compra-carta" id="compra-carta"></div>
+        </div>
+        <div class="energia-bolota" id="energ"></div>
+        <div class="mao" id="mao">
+        </div>
+        <div class="passar-turno" onclick="terminarTurno()">Passar Turno</div>
+    </footer>
+</body>
+</html>

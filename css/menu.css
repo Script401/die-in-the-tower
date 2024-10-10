@@ -1,0 +1,21 @@
+* {
+    padding: 0;
+    margin: 0;
+    user-select: none;
+}
+body {
+    background-image: url(../Sprites/Menu/ceu-menu.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.buttons {
+    margin: 40vh 30px 30px 18vw;
+    position: absolute;
+}
+.titulo {
+    position: absolute;
+    top: 9vh;
+    right: 19vw;
+    width: 450px;
+    height: 400px;
+}
