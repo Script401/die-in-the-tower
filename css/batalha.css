@@ -1,0 +1,525 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    user-select: none;
+}
+body {
+    overflow: hidden;
+    background-image: url(../Sprites/Batalha/Background.jpg.png);
+    background-size: cover;
+    background-position-y:-200px;
+    background-repeat: no-repeat;
+    background-color: rgb(116, 100, 71);
+}
+.meio {
+    position: relative;
+}
+.jogador {
+    width: 550px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 130px;
+    left: 9vw;
+}
+.jogador .jogador-img {
+    width: 300px;
+    height: 500px;
+}
+.vida {
+    position: absolute;
+    left: 30px;
+    bottom: 40px;
+    width: 70px;
+    height: 65px;
+    background-image: url(../Sprites/Batalha/vida-bolota.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(231, 255, 20);
+    font-size: 20px;
+    font-weight: 800;
+}
+.aprimorar {
+    position: absolute;
+    left: 30px;
+    bottom: 210px;
+    width: 70px;
+    height: 65px;
+    background-image: url(../Sprites/Batalha/aprimorar-bolota.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(35, 216, 19);
+    font-size: 35px;
+    font-weight: 800;
+}
+.enfraquecer {
+    position: absolute;
+    left: 30px;
+    bottom: 280px;
+    width: 70px;
+    height: 65px;
+    background-image: url(../Sprites/Batalha/enfraquecer-bolota.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(221, 44, 44);
+    font-size: 35px;
+    font-weight: 800;
+}
+.escudo {
+    position: absolute;
+    left: 30px;
+    bottom: 110px;
+    width: 70px;
+    height: 90px;
+    background-image: url(../Sprites/Batalha/escudo-bolota.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(74, 146, 204);
+    font-size: 35px;
+    font-weight: 800;
+}
+.vida-borda {
+    width: 500px;
+    height: 20px;
+    border: 7px groove rgb(104, 92, 92);
+    border-radius: 10px;
+}
+.vida-meio {
+    width: 500px;
+    height: 20px;
+    background-color: brown;
+}
+.inimigo {
+    width: 550px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 130px;
+    right: 9vw;
+}
+.inimigo .inimigo-img {
+    width: 300px;
+    height: 500px;
+}
+.inimigo .inimigo-img-f {
+    width: 600px;
+    height: 500px;
+}
+.inimigo-acao {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(168, 255, 173);
+    font-size: 35px;
+    font-weight: 800;
+    top: -90px;
+    width: 100px;
+    height: 100px;
+}
+.escudo-anim {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    opacity: 0;
+}
+.escudo-anim-p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 130px;
+    font-weight: 900;
+    position: absolute;
+    color: rgb(108, 252, 64);
+}
+.aprimorar-anim {
+    position: absolute;
+    opacity: 0;
+}
+.enfraquecer-anim {
+    position: absolute;
+    filter: hue-rotate(275deg);
+    opacity: 0;
+}
+.baixo {
+    position: absolute;
+    bottom: 0px;
+    width: 100vw;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+}
+.compra {
+    background-image: url(../Sprites/Batalha/carta.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 150px;
+    width: 100px;
+    position: absolute;
+    left: 40px;
+    bottom: 20px;
+}
+.compra .compra-quantia {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    color: rgb(41, 255, 22);
+    font-size: 40px;
+    font-weight: 800;
+}
+.compra .compra-carta {
+    height: 150px;
+    width: 100px;
+    background-image: url(../Sprites/Batalha/carta.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.descarte {
+    background-image: url(../Sprites/Batalha/carta.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 150px;
+    width: 100px;
+    position: absolute;
+    left: 190px;
+    bottom: 20px;
+}
+.descarte .descarte-quantia {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    color: rgb(142, 22, 255);
+    font-size: 40px;
+    font-weight: 800;
+}
+.descarte .descarte-carta {
+    height: 150px;
+    width: 100px;
+    background-image: url(../Sprites/Batalha/carta.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.energia-bolota {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 20px;
+    left: 20vw;
+    background-image: url(../Sprites/Batalha/energia-bolota2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(163, 255, 155);
+    font-size: 40px;
+    font-weight: 900;
+}
+.mao {
+    display: flex;
+}
+.mao .mao-carta {
+    margin-left: -50px;
+    height: 200px;
+    width: 150px;
+    transition: 0.5s all;
+    cursor: pointer;
+}
+.mao .mao-carta:hover {
+    margin-left: -10px;
+    margin-right: 40px;
+    margin-top: -30px;
+}
+.passar-turno {
+    width: 400px;
+    height: 90px;
+    position: absolute;
+    top: 20px;
+    right: 7vw;
+    background-image: url(../Sprites/Batalha/fundo-turno.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(128, 98, 65);
+    font-size: 25px;
+    font-weight: 900;
+    cursor: pointer;
+}
+.debuff2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    gap: 30px;
+    height: 100vh;
+    width: 100vw;
+    transition: 0.5s all;
+}
+.debuff2 .debuff2-anim {
+    height: 300px;
+    width: 200px;
+    transition: 0.5s all;
+}
+.fundo-escuro {
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-color: black;
+    opacity: 0.4;
+}
+.der-vit {
+    position: absolute;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.derrota {
+    width: 39vw;
+    height: 52vh;
+    position: absolute;
+    background-image: url(../Sprites/Batalha/fundo-papel-velho.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5vw;
+}
+.derrota .derrota-titulo {
+    color: rgb(202, 49, 10);
+    font-size: 3vmax;
+    font-weight: 600;
+    margin-bottom: 3vh;
+}
+.derrota .derrota-descricao {
+    color: rgb(202, 49, 10);
+    width: 20vw;
+    text-align: center;
+    font-size: 2vmax;
+    font-weight: 600;
+    margin-bottom: 3vh;
+}
+.derrota .derrota-perder {
+    color: rgb(202, 49, 10);
+    padding: 0.5vmax;
+    background-color: rgb(248, 173, 112);
+    border: 0.2vmax solid rgb(243, 155, 83);
+    border-radius: 1vmax;
+    text-align: center;
+    font-size: 1.5vmax;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 1.5vh;
+}
+.derrota .derrota-irmenu {
+    color: rgb(202, 49, 10);
+    padding: 0.5vmax;
+    background-color: rgb(248, 173, 112);
+    border: 0.2vmax solid rgb(243, 155, 83);
+    border-radius: 1vmax;
+    text-align: center;
+    font-size: 1.5vmax;
+    font-weight: 600;
+    cursor: pointer;
+}
+.vitoria {
+    width: 39vw;
+    height: 52vh;
+    position: absolute;
+    background-image: url(../Sprites/Batalha/fundo-papel-velho.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5vw;
+}
+.vitoria .vitoria-titulo {
+    color: rgb(202, 49, 10);
+    font-size: 3vmax;
+    font-weight: 600;
+    margin-bottom: 3vh;
+}
+.vitoria .vitoria-descricao {
+    color: rgb(202, 49, 10);
+    width: 22vw;
+    text-align: center;
+    font-size: 2vmax;
+    font-weight: 600;
+    margin-bottom: 3vh;
+}
+.vitoria .vitoria-descricao-f {
+    color: rgb(202, 49, 10);
+    width: 22vw;
+    text-align: center;
+    font-size: 2vmax;
+    font-weight: 600;
+    margin-bottom: 6vh;
+}
+.vitoria .vitoria-perder {
+    color: rgb(202, 49, 10);
+    padding: 0.5vmax;
+    background-color: rgb(248, 173, 112);
+    border: 0.2vmax solid rgb(243, 155, 83);
+    border-radius: 1vmax;
+    text-align: center;
+    font-size: 1.5vmax;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 1.5vh;
+}
+.vitoria .vitoria-irmenu {
+    color: rgb(202, 49, 10);
+    padding: 0.5vmax;
+    background-color: rgb(248, 173, 112);
+    border: 0.2vmax solid rgb(243, 155, 83);
+    border-radius: 1vmax;
+    text-align: center;
+    font-size: 1.5vmax;
+    font-weight: 600;
+    cursor: pointer;
+}
+@keyframes subirCarta {
+    0% {
+        position: relative;
+        bottom: 60px;
+        opacity: 0;
+    }
+    100% {
+        position: relative;
+        bottom: 0px;
+        opacity: 1;
+    }
+}
+@keyframes descerCarta {
+    0% {
+        position: relative;
+        bottom: 0px;
+        opacity: 1;
+    }
+    100% {
+        position: relative;
+        bottom: 60px;
+        opacity: 0;
+    }
+}
+@keyframes attackJogador {
+    0% {
+        margin-left: 0px;
+    }
+    40% {
+        margin-left: 150px;
+    }
+    100% {
+        margin-left: 0px;
+    }
+}
+@keyframes attackInimigo {
+    0% {
+        margin-right: 0px;
+    }
+    40% {
+        margin-right: 150px;
+    }
+    100% {
+        margin-right: 0px;
+    }
+}
+@keyframes escudoAnim {
+    0% {
+        opacity: 0;
+        scale: 0.5;
+    }
+    50% {
+        opacity: 1;
+        scale: 1;
+    }
+    100% {
+        opacity: 0;
+        scale: 1.3;
+    }
+}
+@keyframes aprimorarAnim {
+    0% {
+        opacity: 0;
+        margin-top: 50px;
+    }
+    50% {
+        opacity: 1;
+        margin-top: 0px;
+    }
+    100% {
+        opacity: 0;
+        margin-top: -50px;
+    }
+}
+@keyframes enfraquecerAnim {
+    0% {
+        opacity: 0;
+        margin-top: -50px;
+    }
+    50% {
+        opacity: 1;
+        margin-top: 0px;
+    }
+    100% {
+        opacity: 0;
+        margin-top: 50px;
+    }
+}
+@keyframes debuff2Anim {
+    0% {
+        opacity: 0;
+        scale: 0.7;
+        margin-left: 120px;
+    }
+    50% {
+        opacity: 1;
+        scale: 1;
+        margin-left: 0px;
+    }
+    100% {
+        opacity: 0;
+        scale: 0.7;
+        margin-left: -120px;
+    }
+}
+@keyframes derVit1 {
+    0% {
+        scale: 0.5;
+        opacity: 0;
+    }
+    100% {
+        scale: 1;
+        opacity: 1;
+    }
+}
+@keyframes derVit2 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.4;
+    }
+}
