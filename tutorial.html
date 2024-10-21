@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial</title>
+    <link rel="stylesheet" href="css/tutorial.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="js/tutorial.js" defer></script>
+</head>
+
+<body>
+    <div class="tutorial-container container">
+        <h1 id="titulo-tutorial">TUTORIAL</h1>
+        <h2 id="subtitulo-tutorial">CARTAS</h2>
+        <div class="flex-grid-container">
+            <button class="hidden" id="button-voltar" onclick="voltar()">
+                <img src="Sprites/Tutorial/Seta.png" id="voltar-img" width="50px">
+            </button>
+            <div class="grid-tutorial-1" id="grid-1">
+                <div id="cartaAttack" class="tutorial-card">
+                    <img src="Sprites/Batalha/attack-carta.png" id="img-cartaAttack" width="150px">
+                    <p class="p-tutorial" id="p-cartaAttack">Carta de ataque, você causa 8 de dano
+                    </p>
+                </div>
+                <div id="cartaDefend" class="tutorial-card">
+                    <img src="Sprites/Batalha/defend-carta.png" id="img-cartaDefend" width="150px">
+                    <p class="p-tutorial" id="p-cartaDefend">Carta de defesa, você ganha 7 de escudo para o turno
+                    </p>
+                </div>
+                <div id="cartaAprimorar" class="tutorial-card">
+                    <img src="Sprites/Batalha/aprimorar-carta.png" id="img-cartaAprimorar" width="150px">
+                    <p class="p-tutorial" id="p-cartaAprimorar">Carta para aprimorar, você aumenta seu ataque em 2</p>
+                </div>
+            </div>
+
+            <!-- Conteudo do segundo tutorial (resto das cartas) -->
+                <div class="grid-tutorial-2 hidden">
+                    <div id="cartaEnfraquecer" class="tutorial-card">
+                        <img src="Sprites/Batalha/enfraquecer-carta.png" id="img-cartaEnfraquecer" width="150px">
+                        <p class="p-tutorial" id="p-cartaEnfraquecer">Carta de Enfraquecimento, você diminui o ataque do inimigo em 3</p>
+                    </div>
+                    <div id="cartaGosma" class="tutorial-card">
+                        <img src="Sprites/Batalha/gosma-carta.png" id="img-cartaGosma" width="150px">
+                        <p class="p-tutorial" id="p-cartaGosma">Carta de Gosma, usada pelo boss final, ela é uma carta que "gruda" em seu baralho e faz com que você tenha 1 carta a menos para receber a cada turno</p>
+                    </div>
+    
+                </div>
+                <!-- Tutorial 3 -->
+                <div class="grid-tutorial-3 hidden">
+                    <div id="buff-forca" class="tutorial-card">
+                        <img src="Sprites/Batalha/aprimorar-bolota.png" id="img-cartaEnfraquecer" width="150px">
+                        <p class="p-tutorial" id="p-buff-forca">Ícone de força que indica a força extra obtida por cartas de aprimoramento. Perde-se 1 de buff por turno.</p>
+                    </div>
+                    <div id="debuff-forca" class="tutorial-card">
+                        <img src="Sprites/Batalha/enfraquecer-bolota.png" id="img-debuff-forca" width="150px">
+                        <p class="p-tutorial" id="p-debuff-forca">Ícone de fraqueza que mostra a força reduzida após um enfraquecimento aplicado pelo inimigo. Perde-se 1 de debuff por turno.</p>
+                    </div>
+                    <div id="escudo-tutorial" class="tutorial-card">
+                        <img src="Sprites/Batalha/escudo-bolota.png" id="img-escudo-tutorial" width="150px">
+                        <p class="p-tutorial" id="p-escudo-tutorial">Exibe a quantidade de proteção que absorve danos antes da vida. É resetado a cada turno e aumenta conforme o uso de cartas de defesa.</p>
+                    </div>
+                </div>
+                    <!-- Tutorial 4 -->
+                <div class="grid-tutorial-4 hidden">
+                    <div id="vida-tutorial" class="tutorial-card">
+                        <img src="Sprites/Batalha/vida-bolota.png" id="img-vida-tutorial" width="150px">
+                        <p class="p-tutorial" id="p-vida-tutorial">Indica a quantidade de vida</p>
+                    </div>
+                    <div id="energia-tutorial" class="tutorial-card">
+                        <img src="Sprites/Batalha/energia-bolota.png" id="img-energia-tutorial" width="150px">
+                        <p class="p-tutorial" id="p-energia-tutorial">Exibe a energia disponível por turno (inicialmente 3). Permite o uso de cartas e acumula caso não seja totalmente gasta ao fim do turno.</p>
+                    </div>
+                    <div id="turnoinmg-tutorial" class="tutorial-card">
+                        <img src="Sprites/Tutorial/Turno-inimigo.jpg" id="img-inmgturn-tutorial" width="150px">
+                        <p class="p-tutorial" id="p-inmgturn-tutorial">Indicador turno inimigo: Mostra a ação planejada do inimigo para o próximo turno, incluindo tipo de ação e intensidade.</p>
+                    </div>
+    
+                </div>
+
+                <!-- Conteúdo do último grid -->
+            <div class="grid-tutorial-final hidden">
+                <a href="batalha1.html" id="link-jogar">
+                <button onclick="iniciarJogo()" id="botao-iniciar-jogo">Ir para o jogo</button>
+                </a>
+            </div>
+
+            <button onclick="avancar()" id="button-avancar">
+                <img src="Sprites/Tutorial/Seta.png" alt="" width="50px">
+            </button>
+        </div>
+        <a href="batalha1.html" id="link-pular-tutorial">
+        <button id="pular-tutorial">
+            <h1>Pular o tutorial</h1>
+        </button>
+        </a>
+    </div>
+</body>
+</html>

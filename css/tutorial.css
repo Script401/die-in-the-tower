@@ -1,0 +1,209 @@
+* {
+    padding: 0;
+    margin: 0;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(../Sprites/Menu/ceu-menu.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tutorial-container {
+    width: 70%;
+    max-width: 1200px;
+    height: 550px;
+    background: radial-gradient(rgb(255, 166, 0), rgb(142, 92, 0));
+    border: 4px solid black;
+    padding: 20px;
+    text-align: center;
+}
+
+#link-pular-tutorial, #link-jogar {
+    text-decoration: none;
+    color: white;
+}
+
+.p-tutorial {
+    color: white;
+    padding: 5px;
+}
+
+/* Ajuste para o título e subtítulo */
+#titulo-tutorial, #subtitulo-tutorial {
+    color: white;
+}
+
+.flex-grid-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+}
+
+.grid-tutorial-1 {
+    display: grid;
+    width: 75%;
+    height: 80%;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    margin: 0 auto;
+}
+
+.grid-tutorial-2 {
+    display: grid;
+    width: 75%;
+    height: 80%;
+    position: relative;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    margin: 0 auto;
+}
+
+.grid-tutorial-3 {
+    display: grid;
+    width: 75%;
+    height: 80%;
+    position: relative;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    margin: 0 auto;
+}
+
+.grid-tutorial-4 {
+    display: grid;
+    width: 75%;
+    height: 80%;
+    position: relative;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    margin: 0 auto;
+}
+
+/* Grid do último passo */
+.grid-tutorial-final {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    height: 80%;
+    margin: 0 auto;
+}
+
+#botao-iniciar-jogo {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: white;
+    background-color: rgb(21, 21, 21);
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#botao-iniciar-jogo:hover {
+    background-color: black;
+}
+
+
+#button-voltar {
+    transform: rotate(180deg);
+}
+
+#button-voltar, #button-avancar {
+    background-color: transparent;
+    border: none;
+}
+
+#pular-tutorial {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: rgb(21, 21, 21);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#pular-tutorial:hover {
+    background-color: black;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Animações para os grids saindo à esquerda */
+@keyframes sairEsquerda {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+/* Animações para os grids entrando da direita */
+@keyframes entrarDireita {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.sairEsquerda {
+    animation: sairEsquerda 0.5s forwards;
+}
+
+.entrarDireita {
+    animation: entrarDireita 0.5s forwards;
+}
+
+/* Animações para voltar da esquerda */
+@keyframes entrarEsquerda {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes sairDireita {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.sairDireita {
+    animation: sairDireita 0.5s forwards;
+}
+
+.entrarEsquerda {
+    animation: entrarEsquerda 0.5s forwards;
+}
